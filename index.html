@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Univers Hub</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="p-4">
+    <header>
+        <div class="my-4 space-y-4">
+            <h1 class="flex justify-center font-bold text-4xl">Ai Univers Hub</h1>
+            <div class="flex justify-center w-full">
+                <button id="sort-data" class="btn btn-error text-white">Sort By Date</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="card-conteiner" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        </div>
+
+        <!-- modal -->
+        <div>
+            <!-- You can open the modal using ID.showModal() method -->
+            <dialog id="my_modal_3" class="modal">
+
+            </dialog>
+        </div>
+    </main>
+    
+
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
