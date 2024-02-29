@@ -4,7 +4,6 @@ const modalContent = document.getElementById("modal-content");
 let clickeItem = false;
 
 
-
 const seDetails = async (id) => {
     let idModified = id;
     if (id < 10) {
@@ -70,7 +69,6 @@ const seDetails = async (id) => {
             </div>
         </div>
     `
-
 }
 
 const loadCards = async () => {
@@ -89,7 +87,8 @@ const loadCards = async () => {
             const cardDiv = document.createElement("div");
             cardDiv.innerHTML = `
             <div onclick="seDetails(${card.id})" class="card w-96 bg-base-100 shadow-xl p-4 cursor-pointer">
-                    <figure><img src="${card.image}" alt="${card.name} img" />
+                    <figure>
+                    <div><img src="${card.image}" alt="${card.name} img" /></div>
                     </figure>
                     <div class="py-4 space-y-2">
                         <div>
@@ -110,13 +109,14 @@ const loadCards = async () => {
             cardConteiner.appendChild(cardDiv)
 
         });
-    } else {
-
+    }
+    else {
         cardsData.forEach(card => {
             const cardDiv = document.createElement("div");
             cardDiv.innerHTML = `
-        <div onclick="seDetails(${card.id})" class="card w-96 bg-base-100 shadow-xl p-4 cursor-pointer">
-                <figure><img src="${card.image}" alt="${card.name} img" />
+        <div onclick="seDetails(${card.id})" class="card w-full bg-base-100 shadow-xl p-4 cursor-pointer">
+                <figure>
+                <div><img class=" w-full" src="${card.image}" alt="${card.name} img" /></div>
                 </figure>
                 <div class="py-4 space-y-2">
                     <div>
@@ -135,7 +135,6 @@ const loadCards = async () => {
             </div>
         `
             cardConteiner.appendChild(cardDiv)
-
         });
     }
 }
@@ -143,7 +142,6 @@ const loadCards = async () => {
 loadCards()
 
 document.getElementById("sort-data").addEventListener("click", () => {
-    console.log("inside sort")
     clickeItem = true;
     loadCards();
 })
